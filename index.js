@@ -30,14 +30,7 @@ app.get("/",
 app.post("/",
   (req,res)=>{
 
-    console.log(req.body)
-    console.log("This is post reqest")
-
-    res.json(
-      {
-        message:"Helow Good Morning " + req.body.name
-      }
-    )
+    
   })
 
 app.listen(3000,()=>{
