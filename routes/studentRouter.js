@@ -8,7 +8,19 @@ studentRouter.get("/",(req,res)=>{
 })
 
 studentRouter.post("/",(req,res)=>{
-    
+
+    const student=new Student(req.body)
+
+    student.save().then(()=>{
+        res.json({
+            message:"Student Created"
+        })
+        
+    }).catch(()=>{
+        res.json({
+            message : "Student Not Created"
+        })
+    })
 
 })
 
