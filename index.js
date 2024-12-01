@@ -31,15 +31,9 @@ app.get("/",
 app.post("/",
   (req,res)=>{
 
-    const studentSchema=mongoose.Schema({
-      name:String,
-      age:Number,
-      gender:String
-    })
-
-    const Student = mongoose.model("Student",studentSchema)
-
+   
     const newStudent =new Student(req.body)
+
     newStudent.save().then(()=>{
 
     res.json({
