@@ -18,6 +18,8 @@ connection.once("open",()=>{
   console.log("Database is conected");
 })
 
+app.use("/api/students",studentRouter)
+
 app.use (bodyParser.json())
 
 app.listen(3000,()=>{
