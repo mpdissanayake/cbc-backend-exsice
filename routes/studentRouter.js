@@ -4,7 +4,7 @@ import Student from "../models/student.js";
 const studentRouter=express.Router();//create studentRouter//
 
 studentRouter.get("/",(req,res)=>{
-    console.log("This is get request fro student router")
+    console.log("This is get request from student router")
     res.json({
         message:"this is get request for student router"
     })

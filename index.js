@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import Student from "./models/student.js";
 import studentRouter from "./routes/studentRouter.js";
+import productRouter from "./routes/productRouter.js";
 
 const app =express();
 const mongoUrl="mongodb+srv://admin:123@cluster0.pka0s.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
@@ -18,7 +19,8 @@ connection.once("open",()=>{
   console.log("Database is conected");
 })
 
-app.use("/api/students",studentRouter)
+app.use("/api/students",studentRouter);
+app.use("/api/product",productRouter);
 
 app.use (bodyParser.json())
 
