@@ -39,18 +39,16 @@ app.post("/",
     const Student = mongoose.model("Student",studentSchema)
 
     const newStudent =new Student(req.body)
-    newStudent.save().then(
-()=>{
+    newStudent.save().then(()=>{
 
     res.json({
-      messege:"Student"
-    })
-}
-
-    ).catch(
-      (error)=>{
+      messege:"Student saved successfully"
+    });
+})
+.catch((error)=>{
         res.json({
-          message:"Error"
+          message:"Error saving student",
+          error:error.message
         })
       }
 
