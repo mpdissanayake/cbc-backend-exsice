@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
+import Student from "./models/student.js";
 
 const app =express();
 const mongoUrl="mongodb+srv://admin:123@cluster0.pka0s.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
