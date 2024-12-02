@@ -8,7 +8,7 @@ import productRouter from "./routes/productRouter.js";
 const app =express();
 const mongoUrl="mongodb+srv://admin:123@cluster0.pka0s.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
-
+app.use(express.json());// add this line to data save in data base//
 
 mongoose.connect(mongoUrl,{})
 

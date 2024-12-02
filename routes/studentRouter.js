@@ -4,6 +4,13 @@ import Student from "../models/student.js";
 const studentRouter=express.Router();//create studentRouter//
 
 studentRouter.get("/",(req,res)=>{
+   Student.find().then(
+    (studentlist)=>{{
+        res.json({
+            studentlist :studentlist
+        })
+    }}
+   )
     
 })
 
@@ -13,9 +20,10 @@ studentRouter.post("/",(req,res)=>{
 
     student.save().then(()=>{
         res.json({
-            message:"Student Created"
+            
+            message:"new Student Created"
         })
-        
+
     }).catch(()=>{
         res.json({
             message : "Student Not Created"
