@@ -2,15 +2,17 @@ import Student from "../models/student.js";
 
 
 //create student router unction//
-studentRouter.get("/",(req,res)=>{
-    (studentList)=>{
+export function getStudent(req,res){
+    Student.find({})
+    .then((studentList)=>{
         res.json({
-            list : studentList
+            list:studentList
         })
-    }
-})
+    })
+}
+// create create student function//
 
-studentRouter.post("/",(req,res)=>{
+export function createStudent (req,res){
 
     const student=new Student(req.body)
     student.save().then(()=>{
@@ -22,5 +24,19 @@ studentRouter.post("/",(req,res)=>{
             message : " Student is no created"
         })
     })
-})
-export default studentRouter;
+}
+export function deleteStudent(req,res){
+    Student.deleteOne({name:req.body.name})
+    .then(()=>{
+            res.json(
+                {
+                    message: "Student deleted successfully"
+                })
+        })
+        .catch(()=>{
+            message: "Error Deleting student",
+            error;
+            
+        })
+
+}

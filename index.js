@@ -20,7 +20,7 @@ connection.once("open",()=>{
 })
 
 app.use("/api/students",studentRouter);
-app.use("/api/product",productRouter);
+app.use("/api/product", productRouter);
 
 app.use (bodyParser.json())
 
