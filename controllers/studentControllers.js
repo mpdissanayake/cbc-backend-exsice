@@ -1,4 +1,6 @@
-import studentRouter from "../routes/studentRouter";
+import Student from "../models/student.js";
+
+
 //create student router unction//
 studentRouter.get("/",(req,res)=>{
     (studentList)=>{
