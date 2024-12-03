@@ -1,19 +1,12 @@
 import express from "express";
+import { createProduct, deleteProduct, getProduct } from "../controllers/productController.js";
 
-const productRouter=express.Router();
+const productRouter = express.Router();
 
-productRouter.get("/",(req,res)=>{
-    console.log("This is a GET reqest from productsRouter")
-    res.json({
-        message:"This is a GET reqest from productsRouter"
-    });
-});
-productRouter.post("/",(req,res)=>{
-    console.log("This is a GET reqest for productsRouter")
-    res.json(
-        {
-            message:"This is post Reqest for ProductRouter"
-        });
-})
+productRouter.get("/",getProduct);
+
+productRouter.post("/",createProduct);
+
+productRouter.delete("/",deleteProduct);
 
 export default productRouter;
