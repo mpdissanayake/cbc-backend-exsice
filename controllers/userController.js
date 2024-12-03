@@ -19,7 +19,7 @@ console.log(newUserData)
        })
   }).catch(()=>{
       res.json({
-        
+
        message:"Creation Failed"
      })
   })
@@ -27,6 +27,24 @@ console.log(newUserData)
 
 export function loginUser(req,res){
     User.find({email : req.body.email}).then((users)=>{
-        res.json(users)
+       if(users.lenth==0){
+        res.json({
+            message :"User not Foumd"
+        })
+       }else{
+        const isPasswordCorrect = bcrypt.compareSync
+        (req.body.password,user.password)
+
+        if(isPasswordCorrect){
+            res.json({
+                message : "USer Log in"
+            })
+        }else{
+            res.json({
+                message : "User Not Loggin in (wroong password"
+            })
+        }
+       }
+        
     })
 }
