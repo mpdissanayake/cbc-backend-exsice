@@ -11,6 +11,7 @@ const app =express();
 const mongoUrl="mongodb+srv://admin:123@cluster0.pka0s.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 app.use(express.json());// add this line to data save in data base//
+app.use (bodyParser.json());
 
 mongoose.connect(mongoUrl,{})
 
@@ -21,13 +22,11 @@ connection.once("open",()=>{
   console.log("Database is conected");
 })
 
-app.use (bodyParser.json())
-
 app.use("/api/students",studentRouter);
 app.use("/api/product", productRouter);
 app.use ("/api/user/", userRouter );
 
-//app.use ("/api/user/", userRouter );
+
 
 
 
