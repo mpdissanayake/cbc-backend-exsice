@@ -10,7 +10,7 @@ dotenv.config()
 
 const app =express();
 
-const mongoUrl="mongodb+srv://admin:123@cluster0.pka0s.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const mongoUrl=""
 
 app.use(express.json());// add this line to data save in data base//
 app.use (bodyParser.json());
