@@ -6,6 +6,7 @@ import productRouter from "./routes/productRouter.js";
 import { createUser } from "./controllers/userController.js";
 import userRouter from "./routes/userRouter.js";
 import dotenv from "dotenv";
+dotenv.config()
 
 const app =express();
 
