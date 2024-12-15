@@ -10,7 +10,7 @@ dotenv.config()
 
 const app =express();
 
-const mongoUrl=""
+const mongoUrl=process.env.MONGO_DB_URI
 
 app.use(express.json());// add this line to data save in data base//
 app.use (bodyParser.json());
