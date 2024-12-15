@@ -5,6 +5,7 @@ import studentRouter from "./routes/studentRouter.js";
 import productRouter from "./routes/productRouter.js";
 import { createUser } from "./controllers/userController.js";
 import userRouter from "./routes/userRouter.js";
+import dotenv from "dotenv";
 
 const app =express();
 
